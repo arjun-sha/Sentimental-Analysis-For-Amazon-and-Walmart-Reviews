@@ -7,7 +7,6 @@ from fastapi.staticfiles import StaticFiles
 
 
 def main():
-    # app = FastAPI(docs_url=None, redoc_url=None)
     app = FastAPI()
 
     @app.exception_handler(RequestValidationError)
