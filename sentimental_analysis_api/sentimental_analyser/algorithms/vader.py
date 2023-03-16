@@ -12,8 +12,19 @@ class VaderClassifier:
         subjectivity = blob.subjectivity
         return {"polarity": polarity, "subjectivity": subjectivity}
 
+    def _get_insight(self, score):
+        insight = (
+            "Positive"
+            if score["pos"] > score["neg"]
+            else "Negative"
+            if score["pos"] < score["neg"]
+            else "Neutral"
+        )
+        return {"insight": insight}
+
     def classify(self, input_str):
         score = SentimentIntensityAnalyzer().polarity_scores(input_str)
         pol_sub = self._get_polarity_subjectivity(input_str)
-        score.update(pol_sub)
+        insight = self._get_insight(score)
+        score.update(dict(pol_sub, **insight))
         return score

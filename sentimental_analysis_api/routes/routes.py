@@ -42,10 +42,9 @@ async def classifier(item: IndividualDataSchema) -> JSONResponse:
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             content={"result": "Failed to analyse the input"},
         )
-
     return JSONResponse(
         status_code=status.HTTP_200_OK,
-        content={"result": score},
+        content={"result": score}
     )
 
 

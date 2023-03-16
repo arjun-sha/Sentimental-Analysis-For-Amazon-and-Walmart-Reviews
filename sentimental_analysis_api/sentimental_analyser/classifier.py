@@ -1,5 +1,5 @@
-from sentimental_analysis_api.sentimental_analyser.algorithms import \
-    VaderClassifier
+from sentimental_analysis_api.sentimental_analyser.algorithms import (NaiveBayesClassifier,
+                                                                      VaderClassifier)
 
 
 class Classifier:
@@ -18,7 +18,9 @@ class Classifier:
         lang: str = "en",
     ):
         if algorithm == "vader":
-
             classifier = VaderClassifier()
-            score = classifier.classify(input_string)
-            return score
+        if algorithm == "naive_bayes":
+            classifier = NaiveBayesClassifier()
+
+        score = classifier.classify(input_string)
+        return score
