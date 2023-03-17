@@ -1,0 +1,1 @@
+from sentimental_analysis_api.sentimental_analyser.classifier import Classifier
