@@ -33,5 +33,4 @@ class NaiveBayesClassifier:
         X_data = self.bag_of_words.transform(data).toarray()
         y_pred = self.model.predict(X_data)
         insight = "Positive" if y_pred[0] == 1 else "Negative"
-
         return {"result": int(y_pred[0]), "insight": insight}

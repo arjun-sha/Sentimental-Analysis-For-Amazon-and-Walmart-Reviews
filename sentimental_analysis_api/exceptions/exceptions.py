@@ -1,0 +1,3 @@
+
+class ClassificationException(Exception):
+    pass

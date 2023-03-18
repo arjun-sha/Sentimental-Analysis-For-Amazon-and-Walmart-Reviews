@@ -2,9 +2,7 @@ from pydantic import BaseModel
 
 
 class IndividualDataSchema(BaseModel):
-    id: int
     input_data: str
-    batch: bool
     algorithm: str
     sarcasm: bool
     emoji: bool
@@ -12,5 +10,10 @@ class IndividualDataSchema(BaseModel):
 
 
 class BatchDataSchema(BaseModel):
-    id: int
     file_name: str
+    file_type: str
+    review_field: str
+    algorithm: str
+    sarcasm: bool
+    emoji: bool
+    lang: str

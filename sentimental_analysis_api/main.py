@@ -15,5 +15,4 @@ def main():
 
     app.include_router(router)
     app.mount("/static", StaticFiles(directory="static"), name="static")
-
     return app

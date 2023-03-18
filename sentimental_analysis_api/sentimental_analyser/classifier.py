@@ -1,5 +1,6 @@
 from sentimental_analysis_api.sentimental_analyser.algorithms import (NaiveBayesClassifier,
                                                                       VaderClassifier)
+from sentimental_analysis_api.exceptions import ClassificationException
 
 
 class Classifier:
